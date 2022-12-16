@@ -74,13 +74,15 @@ li, ul, ol {
 
 /* Nav */
 
-.nav__link {
+
+.nav__link, .nav__toggle {
     font-weight: 600;
     letter-spacing: -.5px;
 
     transition: color .2s linear;
 
     margin-right: 58px;
+    cursor: pointer;
 }
 
 .nav__link:hover {
@@ -92,6 +94,68 @@ li, ul, ol {
 }
 
 .nav__link:nth-child(2) {
+    color: black;
+}
+
+.nav__block {
+    position: relative;
+}
+
+.block {
+    width: 100%;
+    min-width: 300px;
+    position: absolute;
+    top: 200%;
+
+    box-shadow: 0 50px 25px -50px rgb(32 53 90 / 15%), 8px 18px 60px 4px rgb(0 0 0 / 13%);
+    -webkit-backdrop-filter: hue-rotate(180deg) brightness(200%) blur(400px);
+    backdrop-filter: hue-rotate(180deg) brightness(200%) blur(400px);
+
+    border-radius: 24px;
+    background-color: hsla(0,0%,100%,.95);
+
+    z-index: 1000;
+    overflow: hidden;
+    /* display: none; */
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+.block.show {
+    /* display: block; */
+    opacity: 1;
+}
+
+.block__inner {
+    display: block;
+    margin-bottom: 24px;
+    cursor: pointer;
+    padding: 10px;
+
+    transition: all .2s linear;
+}
+
+.block__subtitle {
+    font-size: 14px;
+}
+
+.block__inner:last-child {
+    margin-bottom: 0;
+}
+
+
+.block__inner:hover {
+    background-color: #eee;
+}
+
+.block__subtitle {
+    margin: 0;
+}
+
+.block__title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
     color: black;
 }
 
